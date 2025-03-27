@@ -17,7 +17,7 @@ class PokemonManager extends DatabaseManager
 
             $newPokemon = new Pokemon($arrayPokemon["id"], $arrayPokemon["pokedexId"], $arrayPokemon["nameFr"], $arrayPokemon["category"], $arrayPokemon["image"], $arrayPokemon["imageShiny"] ?? "", []);
 
-            if (!empty($data["type_ids"])) {
+            if (!empty($arrayPokemon["type_ids"])) {
                 $typeIds = explode(",", $arrayPokemon["type_ids"]);
                 $typeNames = explode(",", $arrayPokemon["type_names"]);
                 $typeImages = explode(",", $arrayPokemon["type_images"]);

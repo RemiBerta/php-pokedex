@@ -10,8 +10,7 @@ class HomeController{
     public function __construct(){
         $this->pokemonManager = new PokemonManager();
 
-        
-
+    
     }
 
     public function homePage(){

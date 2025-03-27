@@ -6,6 +6,7 @@ use App\Model\Pokemon;
 use App\Model\Type;
 use App\Manager\PokemonManager;
 use App\Controller\HomeController;
+use App\Controller\FavPickerController;
 
 $pokemonManager = New PokemonManager();
 
@@ -21,6 +22,11 @@ if (isset($_GET['action'])) {
 if($action == "homePage"){
     $homeController = new HomeController();
     $homeController->homePage();
+} 
+
+if($action == "favPicker"){
+    $FavPickerController = new FavPickerController();
+    $FavPickerController->favPicker();
 } 
 
 // définir mes routes 
