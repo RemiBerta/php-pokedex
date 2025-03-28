@@ -109,3 +109,18 @@ INSERT INTO `pokemon_type_relation` VALUES (2,1),(3,1),(4,1),(44,1),(45,1),(46,1
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
 -- Dump completed on 2025-03-24 15:09:00
+CREATE TABLE draft (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    selected_pokemon_id INT NOT NULL,
+    status ENUM('en cours', 'terminé') DEFAULT 'en cours',
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (selected_pokemon_id) REFERENCES pokemon(id)
+);
+
+CREATE TABLE draft_eliminations (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    draft_id INT NOT NULL,
+    pokemon_id INT NOT NULL,
+    FOREIGN KEY (draft_id) REFERENCES draft(id),
+    FOREIGN KEY (pokemon_id) REFERENCES pokemon(id)
+);

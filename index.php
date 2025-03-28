@@ -28,9 +28,3 @@ if($action == "favPicker"){
     $FavPickerController = new FavPickerController();
     $FavPickerController->favPicker();
 } 
-
-// définir mes routes 
-// par ex créer une classe Home controller qui contient une focntion
-// homepage qui contient un require_once a homepage 
-
-// réucupérer et afficher les pokemons depuis un controller

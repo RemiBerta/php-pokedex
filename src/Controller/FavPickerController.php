@@ -24,8 +24,8 @@ class FavPickerController{
 
 // Sur cette page je vais générer et afficher deux pokemons aléatoirement et en choisir un que je prefere, le garder et 
 // supprimer l'autre pour en générer un nouveau au pif
-// il me faut : une méthode qui va chercher deux poké au pif, est-ce qu'on peut utiliser le selectbyID existant en générant une id random ? ou alors on créer une autre methode ?
-// il me faut : une méthode qui élimine le pokemon non fav et l'envoi quelque part 
+// il me faut : une méthode qui va chercher deux poké au pif, on peut utiliser le selectbyID existant en générant une id random
+// il me faut : une méthode qui récupere le pokemon  fav et l'envoi au prochain tour
 // il me faut : une méthode qui va venir remplacer celui éliminé par un autre poké au pif, on recycle et change quelques trucs sur la méthode plus haut
 // probleme : où vont les pokemons éliminés ? si non on pourrait retomber sur le meme poké plusieur fois
-// 
+// draft : nouvelle page 
