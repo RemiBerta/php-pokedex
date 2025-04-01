@@ -9,8 +9,8 @@
 </head>
 <body> 
     <div class="text-center" >
-        <a class="btn btn-warning mt-5" href="index.php?action=homePage">Home</a>
-        <a class="btn btn-primary mt-5" href="http://localhost/php-pokedex/index.php?action=favPicker">FavPicker</a>
+        <a class="btn btn-warning mt-5" href="index.php?action=homePage">Accueil</a>
+        <a class="btn btn-primary mt-5" href="http://localhost/php-pokedex/index.php?action=startDraft">Commencer le duel de favoris</a>
     </div>
 
 

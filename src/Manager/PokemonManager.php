@@ -47,8 +47,6 @@ class PokemonManager extends DatabaseManager
 
             return false;
         }
-        //je dois mettre des objets de Type.php 
-        // $type = new Type($array["typeId"], etc...)
         return new Pokemon($arrayPokemon["id"], $arrayPokemon["pokedexId"], $arrayPokemon["nameFr"], $arrayPokemon["category"], $arrayPokemon["image"], $arrayPokemon["imageShiny"], $arrayPokemon[""]);
     }
 
@@ -92,4 +90,16 @@ class PokemonManager extends DatabaseManager
 
         return $requete->rowCount() > 0;
     }
+
+    public function selectRandomPokemon(): Pokemon
+    {
+        $query = "SELECT p.id, p.pokedexId, p.nameFr, p.category, p.image, p.imageShiny, GROUP_CONCAT(pt.id ORDER BY pt.id SEPARATOR ',') AS type_ids,GROUP_CONCAT(pt.name ORDER BY pt.id SEPARATOR ',') AS type_names, GROUP_CONCAT(pt.image ORDER BY pt.id SEPARATOR ',') AS type_images FROM pokemon p LEFT JOIN pokemon_type_relation ptr ON p.id = ptr.pokemon_id LEFT JOIN pokemon_type pt ON ptr.type_id = pt.id GROUP BY p.id ORDER BY RAND() LIMIT 1";
+        $reponse = self::getConnexion()->prepare($query);
+        $reponse->execute();
+        $arrayPokemon = $reponse->fetch();
+
+        return new Pokemon($arrayPokemon["id"], $arrayPokemon["pokedexId"], $arrayPokemon["nameFr"], $arrayPokemon["category"], $arrayPokemon["image"], $arrayPokemon["imageShiny"], []);;
+    }
+
+
 }

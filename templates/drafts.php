@@ -1,5 +1,5 @@
 <?php
-require_once("header.php");
+require_once("block/header.php");
 ?>
 <div class="row">
     <?php foreach ($drafts as $draft): ?>
@@ -43,5 +43,5 @@ require_once("header.php");
 </div>
 
 <?php
-require_once("footer.php");
+require_once("block/footer.php");
 ?>
